@@ -18,6 +18,9 @@ export const Home: FC = memo(() => {
   const onClickRadarPlot = useCallback(() => {
     navigate("/radarplot");
   }, [navigate]);
+  const onClickBubblePlot = useCallback(() => {
+    navigate("/bubbleplot");
+  }, [navigate]);
 
   return (
     <>
@@ -31,6 +34,8 @@ export const Home: FC = memo(() => {
       <button onClick={onClickBarPlot}>Go To BarPlot</button>
       <br />
       <button onClick={onClickRadarPlot}>Go To RadarPlot</button>
+      <br />
+      <button onClick={onClickBubblePlot}>Go To BubblePlot</button>
     </>
   );
 });

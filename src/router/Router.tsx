@@ -6,6 +6,7 @@ import { LinePlot } from "../components/pages/LinePlot";
 import { PiePlot } from "../components/pages/PiePlot";
 import { BarPlot } from "../components/pages/BarPlot";
 import { RadarPlot } from "../components/pages/RadarPlot";
+import { BubblePlot } from "../components/pages/BubblePlot";
 import { NotFound } from "../components/pages/NotFound";
 
 export const Router: FC = memo(() => {
@@ -17,6 +18,7 @@ export const Router: FC = memo(() => {
         <Route path="/pieplot" element={<PiePlot />} />
         <Route path="/barplot" element={<BarPlot />} />
         <Route path="/radarplot" element={<RadarPlot />} />
+        <Route path="/bubbleplot" element={<BubblePlot />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
