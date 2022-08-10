@@ -9,14 +9,28 @@ export const Home: FC = memo(() => {
   const onClickLinePlot = useCallback(() => {
     navigate("/lineplot");
   }, [navigate]);
+  const onClickPiePlot = useCallback(() => {
+    navigate("/pieplot");
+  }, [navigate]);
+  const onClickBarPlot = useCallback(() => {
+    navigate("/barplot");
+  }, [navigate]);
+  const onClickRadarPlot = useCallback(() => {
+    navigate("/radarplot");
+  }, [navigate]);
 
   return (
     <>
       <h3>Home Pages</h3>
       <button onClick={onClickHome}>Go To Home</button>
       <br />
-      <br />
       <button onClick={onClickLinePlot}>Go To LinePlot</button>
+      <br />
+      <button onClick={onClickPiePlot}>Go To PiePlot</button>
+      <br />
+      <button onClick={onClickBarPlot}>Go To BarPlot</button>
+      <br />
+      <button onClick={onClickRadarPlot}>Go To RadarPlot</button>
     </>
   );
 });
