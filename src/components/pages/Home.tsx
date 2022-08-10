@@ -6,11 +6,17 @@ export const Home: FC = memo(() => {
   const onClickHome = useCallback(() => {
     navigate("/");
   }, [navigate]);
+  const onClickLinePlot = useCallback(() => {
+    navigate("/lineplot");
+  }, [navigate]);
 
   return (
     <>
       <h3>Home Pages</h3>
       <button onClick={onClickHome}>Go To Home</button>
+      <br />
+      <br />
+      <button onClick={onClickLinePlot}>Go To LinePlot</button>
     </>
   );
 });
