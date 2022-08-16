@@ -2,6 +2,7 @@ import { FC, memo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Chart, registerables } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import { Button, Typography } from "@material-ui/core";
 
 Chart.register(...registerables);
 
@@ -28,9 +29,19 @@ export const BarPlot: FC = memo(() => {
 
   return (
     <>
-      <h3>BarPlot Pages</h3>
+      <Typography
+        color="secondary"
+        variant="h2"
+        align="center"
+        gutterBottom
+        noWrap
+      >
+        BarPlot Pages
+      </Typography>
       <Bar data={data} />
-      <button onClick={onClickHome}>Go To Home</button>
+      <Button onClick={onClickHome} variant="contained" color="secondary">
+        Go To Home
+      </Button>
     </>
   );
 });
