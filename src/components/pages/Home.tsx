@@ -21,6 +21,9 @@ export const Home: FC = memo(() => {
   const onClickBubblePlot = useCallback(() => {
     navigate("/bubbleplot");
   }, [navigate]);
+  const onClickMaterialUI = useCallback(() => {
+    navigate("/materialui");
+  }, [navigate]);
 
   return (
     <>
@@ -36,6 +39,8 @@ export const Home: FC = memo(() => {
       <button onClick={onClickRadarPlot}>Go To RadarPlot</button>
       <br />
       <button onClick={onClickBubblePlot}>Go To BubblePlot</button>
+      <br />
+      <button onClick={onClickMaterialUI}>Go To Material UI</button>
     </>
   );
 });
