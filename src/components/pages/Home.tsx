@@ -1,11 +1,18 @@
 import { FC, memo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { Button, makeStyles, Typography } from "@material-ui/core";
+
+const useStyles = makeStyles({
+  btnStyle: {
+    background: "pink",
+    padding: "3px 50px",
+    marginBottom: "10px",
+    marginRight: "10px"
+  }
+});
 
 export const Home: FC = memo(() => {
   const navigate = useNavigate();
-  const onClickHome = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
   const onClickLinePlot = useCallback(() => {
     navigate("/lineplot");
   }, [navigate]);
@@ -25,22 +32,61 @@ export const Home: FC = memo(() => {
     navigate("/materialui");
   }, [navigate]);
 
+  const classes = useStyles();
+
   return (
     <>
-      <h3>Home Pages</h3>
-      <button onClick={onClickHome}>Go To Home</button>
-      <br />
-      <button onClick={onClickLinePlot}>Go To LinePlot</button>
-      <br />
-      <button onClick={onClickPiePlot}>Go To PiePlot</button>
-      <br />
-      <button onClick={onClickBarPlot}>Go To BarPlot</button>
-      <br />
-      <button onClick={onClickRadarPlot}>Go To RadarPlot</button>
-      <br />
-      <button onClick={onClickBubblePlot}>Go To BubblePlot</button>
-      <br />
-      <button onClick={onClickMaterialUI}>Go To Material UI</button>
+      <Typography
+        color="secondary"
+        variant="h2"
+        align="center"
+        gutterBottom
+        noWrap
+      >
+        Graph Chart Test
+      </Typography>
+      <Button
+        onClick={onClickLinePlot}
+        className={classes.btnStyle}
+        variant="contained"
+      >
+        go to LinePlot
+      </Button>
+      <Button
+        onClick={onClickPiePlot}
+        className={classes.btnStyle}
+        variant="contained"
+      >
+        go to PiePlot
+      </Button>
+      <Button
+        onClick={onClickBarPlot}
+        className={classes.btnStyle}
+        variant="contained"
+      >
+        go to BarPlot
+      </Button>
+      <Button
+        onClick={onClickRadarPlot}
+        className={classes.btnStyle}
+        variant="contained"
+      >
+        go to RadarPlot
+      </Button>
+      <Button
+        onClick={onClickBubblePlot}
+        className={classes.btnStyle}
+        variant="contained"
+      >
+        go to BubblePlot
+      </Button>
+      <Button
+        onClick={onClickMaterialUI}
+        className={classes.btnStyle}
+        variant="contained"
+      >
+        go to Material UI
+      </Button>
     </>
   );
 });
