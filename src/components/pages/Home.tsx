@@ -31,6 +31,9 @@ export const Home: FC = memo(() => {
   const onClickMaterialUI = useCallback(() => {
     navigate("/materialui");
   }, [navigate]);
+  const onClickCheckMolecules = useCallback(() => {
+    navigate("/checkmolecules");
+  }, [navigate]);
 
   const classes = useStyles();
 
@@ -86,6 +89,13 @@ export const Home: FC = memo(() => {
         variant="contained"
       >
         go to Material UI
+      </Button>
+      <Button
+        onClick={onClickCheckMolecules}
+        className={classes.btnStyle}
+        variant="contained"
+      >
+        go to Molecules Checks
       </Button>
     </>
   );
