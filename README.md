@@ -49,3 +49,36 @@ Created with CodeSandbox
   "lastUpdate": "2022-08-16T04:20:58.000Z"
 }
 ```
+
+### Declaration of Types
+
+```typescript
+import dataJson from "./data.json";
+import dataJsonDaily from "./dataDaily.json";
+
+type APIDATA = typeof dataJson;
+type APIDATADAILY = typeof dataJsonDaily;
+```
+
+### FetchData via axios
+
+```typescript
+export const fetchAsyncGet = createAsyncThunk("covid/get", async () => {
+  const { data } = await axios.get<APIDATA>(apiUrl);
+  return data;
+});
+
+export const fetchAsyncGetDaily = createAsyncThunk("covid/getDaly", async () => {
+  const { data } = await axios.get<APIDATADAILY>(`${apiUrl}/daily`);
+  return data;
+}
+
+export const fetchAsyncGetCountry = createAsyncThunk("covid/getCountry", async(country: string) => {
+  let dynamicUrl = apiUrl;
+  if (country) {
+    dynamicUrl = `${apiUrl}/countries/${country}`;
+  }
+  const { data } = await axios.get<APIDATA>(dynamicUrl);
+  return { data: data, country: country };
+})
+```
