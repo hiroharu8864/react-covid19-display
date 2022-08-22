@@ -82,3 +82,23 @@ export const fetchAsyncGetCountry = createAsyncThunk("covid/getCountry", async(c
   return { data: data, country: country };
 })
 ```
+
+### Switched Country
+
+```typescript
+return(
+  <FormControl className={classes.formControl}>
+    <NativeSelect onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+      dispatch(fetchAsyncGetCountry(e.target.value))
+    }
+    >
+      <option value="">Worldwide</option>
+      {countries.map((country, i) => (
+        <option key={i} value={country}>
+          {country}
+        </option>
+      ))}
+    </NativeSelect>
+  </FormControl>
+);
+```

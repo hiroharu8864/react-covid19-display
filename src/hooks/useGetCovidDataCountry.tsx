@@ -1,0 +1,3 @@
+/**
+ * dynamicUrl = `${apiUrl}/countries/${country}`;
+ */

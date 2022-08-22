@@ -5,7 +5,7 @@ import { Button, makeStyles, Typography } from "@material-ui/core";
 import { useGetCovidData } from "../../hooks/useGetCovidData";
 import { CovidCards } from "../molecules/CovidCards";
 
-const ResultComponent = () => {
+const ResultCountsComponent = () => {
   const { data, error } = useGetCovidData();
   console.log(data);
 
@@ -49,7 +49,7 @@ export const DashBoard: FC = memo(() => {
         Dashboard Sample Page
       </Typography>
       <Suspense fallback={<p>データ取得中....</p>}>
-        <ResultComponent />
+        <ResultCountsComponent />
       </Suspense>
       <Button onClick={onClickHome} variant="outlined" color="default">
         Go to Home
