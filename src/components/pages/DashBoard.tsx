@@ -11,13 +11,21 @@ const ResultComponent = () => {
 
   return (
     <>
-      <p>{data?.confirmed.value}</p>
-      <p>{data?.recovered.value}</p>
-      <p>{data?.deaths.value}</p>
+      <Typography
+        color="primary"
+        variant="h5"
+        align="center"
+        gutterBottom
+        noWrap
+      >
+        WorldWide Covid 19 data
+        <br />
+        {new Date(data?.lastUpdate).toDateString()}
+      </Typography>
       <CovidCards
-        infectedCount={10000}
-        recoveredCount={50000}
-        deadCount={100000}
+        infectedCount={data?.confirmed.value}
+        recoveredCount={data?.recovered.value}
+        deadCount={data?.deaths.value}
       />
     </>
   );
@@ -44,7 +52,7 @@ export const DashBoard: FC = memo(() => {
         <ResultComponent />
       </Suspense>
       <Button onClick={onClickHome} variant="outlined" color="default">
-        Test Button
+        Go to Home
       </Button>
     </>
   );

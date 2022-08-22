@@ -18,19 +18,22 @@ const SContainer = styled.div`
 
 const SInfected = styled(Grid)`
   border-left: 5px solid #33a3ff;
-  border-radius: 0% !important;
+  border-right: 5px solid #33a3ff;
+  border-radius: 30% !important;
   margin: 2% 2% !important;
 `;
 
 const SRecoverd = styled(Grid)`
   border-left: 5px solid #3cb371;
-  border-radius: 0% !important;
+  border-right: 5px solid #3cb371;
+  border-radius: 30% !important;
   margin: 2% 2% !important;
 `;
 
 const SDeaths = styled(Grid)`
   border-left: 5px solid #ff3370;
-  border-radius: 0% !important;
+  border-right: 5px solid #ff3370;
+  border-radius: 30% !important;
   margin: 2% 2% !important;
 `;
 
