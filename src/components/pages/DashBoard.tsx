@@ -1,6 +1,21 @@
-import { FC, memo, useCallback } from "react";
+import { FC, memo, Suspense, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, makeStyles, Typography } from "@material-ui/core";
+
+import { useGetCovidData } from "../../hooks/useGetCovidData";
+
+const ResultComponent = () => {
+  const { data, error } = useGetCovidData();
+  console.log(data);
+
+  return (
+    <>
+      <p>{data?.confirmed.value}</p>
+      <p>{data?.recovered.value}</p>
+      <p>{data?.deaths.value}</p>
+    </>
+  );
+};
 
 export const DashBoard: FC = memo(() => {
   const navigate = useNavigate();
@@ -19,6 +34,9 @@ export const DashBoard: FC = memo(() => {
       >
         Dashboard Sample Page
       </Typography>
+      <Suspense fallback={<p>データ取得中....</p>}>
+        <ResultComponent />
+      </Suspense>
       <Button onClick={onClickHome} variant="outlined" color="default">
         Test Button
       </Button>

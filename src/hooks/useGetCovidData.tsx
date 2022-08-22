@@ -12,4 +12,5 @@ export const useGetCovidData = () => {
   const { data, error } = useSWR<CovidData>(covidDataApi, fetcher, {
     suspense: true
   });
+  return { data, error };
 };
