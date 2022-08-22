@@ -9,6 +9,7 @@ import { RadarPlot } from "../components/pages/RadarPlot";
 import { BubblePlot } from "../components/pages/BubblePlot";
 import { MaterialUI } from "../components/pages/MaterialUI";
 import { CheckMolecules } from "../components/pages/CheckMolecules";
+import { DashBoard } from "../components/pages/DashBoard";
 import { NotFound } from "../components/pages/NotFound";
 
 export const Router: FC = memo(() => {
@@ -23,6 +24,7 @@ export const Router: FC = memo(() => {
         <Route path="/bubbleplot" element={<BubblePlot />} />
         <Route path="/materialui" element={<MaterialUI />} />
         <Route path="/checkmolecules" element={<CheckMolecules />} />
+        <Route path="/dashboard" element={<DashBoard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

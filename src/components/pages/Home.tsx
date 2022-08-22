@@ -34,6 +34,9 @@ export const Home: FC = memo(() => {
   const onClickCheckMolecules = useCallback(() => {
     navigate("/checkmolecules");
   }, [navigate]);
+  const onClickDashboard = useCallback(() => {
+    navigate("/dashboard");
+  }, [navigate]);
 
   const classes = useStyles();
 
@@ -96,6 +99,13 @@ export const Home: FC = memo(() => {
         variant="contained"
       >
         go to Molecules Checks
+      </Button>
+      <Button
+        onClick={onClickDashboard}
+        className={classes.btnStyle}
+        variant="contained"
+      >
+        go to Dashboard
       </Button>
     </>
   );
