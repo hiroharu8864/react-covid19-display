@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, makeStyles, Typography } from "@material-ui/core";
 
 import { useGetCovidData } from "../../hooks/useGetCovidData";
+import { CovidCards } from "../molecules/CovidCards";
 
 const ResultComponent = () => {
   const { data, error } = useGetCovidData();
@@ -13,6 +14,11 @@ const ResultComponent = () => {
       <p>{data?.confirmed.value}</p>
       <p>{data?.recovered.value}</p>
       <p>{data?.deaths.value}</p>
+      <CovidCards
+        infectedCount={10000}
+        recoveredCount={50000}
+        deadCount={100000}
+      />
     </>
   );
 };
