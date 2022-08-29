@@ -58,7 +58,7 @@ export const CovidCards: FC<Props> = memo((Props) => {
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
                 <MdLocalHospital />
-                Infected persons
+                感染者数
               </Typography>
               <Typography variant="h5">
                 <CountUp
@@ -74,7 +74,7 @@ export const CovidCards: FC<Props> = memo((Props) => {
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
                 <AiFillLike />
-                Recovered persons
+                回復者数
               </Typography>
               <Typography variant="h5">
                 <CountUp
@@ -90,7 +90,7 @@ export const CovidCards: FC<Props> = memo((Props) => {
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
                 <GiHastyGrave />
-                Dead persons
+                死者数
               </Typography>
               <Typography variant="h5">
                 <CountUp

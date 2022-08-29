@@ -14,11 +14,25 @@ type Props = {
 
 const covidLabel = ["Infected", "Recoverd", "Deaths"];
 
+const data = {
+  labels: covidLabel,
+  datasets: [
+    {
+      label: "People",
+      backgroundColor: ["rgba(0,0,255,0.5)", "#008080", "rgba(255,0,0,0.5)"],
+      data: [infectedCount, recoveredCount, deadCount]
+    }
+  ]
+};
+const options = {
+  legend: { display: false },
+  title: { display: true, text: "Latest Status" }
+};
+
 export const BarCovidChart: FC<Props> = memo((Props) => {
   return (
     <>
-      <p>test</p>
-      <p>test</p>
+      <Bar data={data} />
     </>
   );
 });

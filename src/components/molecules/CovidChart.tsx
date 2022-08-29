@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Grid } from "@material-ui/core";
 
+import { BarCovidChart } from "../molecules/BarCovidChart";
+
 /** Styled Component定義 */
 const SContainer = styled.div`
   display: flex;
