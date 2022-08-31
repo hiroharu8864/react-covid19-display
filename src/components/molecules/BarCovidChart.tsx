@@ -12,27 +12,32 @@ type Props = {
   deadCount: number;
 };
 
-const covidLabel = ["Infected", "Recoverd", "Deaths"];
-
-const data = {
-  labels: covidLabel,
-  datasets: [
-    {
-      label: "People",
-      backgroundColor: ["rgba(0,0,255,0.5)", "#008080", "rgba(255,0,0,0.5)"],
-      data: [infectedCount, recoveredCount, deadCount]
-    }
-  ]
-};
-const options = {
-  legend: { display: false },
-  title: { display: true, text: "Latest Status" }
-};
-
 export const BarCovidChart: FC<Props> = memo((Props) => {
+  const { infectedCount, recoveredCount, deadCount } = Props;
+
+  /** Propsを受け取らないと、Graphデータを作成する必要がある */
+
+  const covidLabel = ["Infected", "Recoverd", "Deaths"];
+
+  const data = {
+    labels: covidLabel,
+    datasets: [
+      {
+        label: "People",
+        backgroundColor: ["rgba(0,0,255,0.5)", "#008080", "rgba(255,0,0,0.5)"],
+        data: [infectedCount, recoveredCount, deadCount]
+      }
+    ]
+  };
+
+  const options = {
+    legend: { display: false },
+    title: { display: true, text: "Latest Status" }
+  };
+
   return (
     <>
-      <Bar data={data} />
+      <Bar data={data} options={options} />
     </>
   );
 });
