@@ -26,15 +26,15 @@ export const CovidChart: FC<Props> = memo((Props) => {
   return (
     <>
       <SContainer>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={7}>
+        <Grid container spacing={1} justifyContent="center">
+          <Grid item xs={12} md={6}>
             <BarCovidChart
               infectedCount={infectedCount}
               recoveredCount={recoveredCount}
               deadCount={deadCount}
             />
           </Grid>
-          <Grid item xs={12} md={7}>
+          <Grid item xs={12} md={6}>
             <PieCovidChart
               infectedCount={infectedCount}
               recoveredCount={recoveredCount}
