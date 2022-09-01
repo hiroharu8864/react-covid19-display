@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Grid } from "@material-ui/core";
 
 import { BarCovidChart } from "../molecules/BarCovidChart";
+import { PieCovidChart } from "../molecules/PieCovidChart";
 
 /** Styled Component定義 */
 const SContainer = styled.div`
@@ -34,7 +35,11 @@ export const CovidChart: FC<Props> = memo((Props) => {
             />
           </Grid>
           <Grid item xs={12} md={7}>
-            PieChart
+            <PieCovidChart
+              infectedCount={infectedCount}
+              recoveredCount={recoveredCount}
+              deadCount={deadCount}
+            />
           </Grid>
         </Grid>
       </SContainer>

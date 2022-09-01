@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
 import { Chart, registerables } from "chart.js";
-import { Bar } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 
 Chart.register(...registerables);
 
@@ -10,7 +10,7 @@ type Props = {
   deadCount: number;
 };
 
-export const BarCovidChart: FC<Props> = memo((Props) => {
+export const PieCovidChart: FC<Props> = memo((Props) => {
   const { infectedCount, recoveredCount, deadCount } = Props;
 
   /** Propsを受け取らないと、Graphデータを作成する必要がある */
@@ -21,21 +21,17 @@ export const BarCovidChart: FC<Props> = memo((Props) => {
     labels: covidLabel,
     datasets: [
       {
-        label: "People",
-        backgroundColor: ["rgba(0,0,255,0.5)", "#008080", "rgba(255,0,0,0.5)"],
-        data: [infectedCount, recoveredCount, deadCount]
+        data: [infectedCount, recoveredCount, deadCount],
+        backgroundColor: ["#4169e1", "#ff1493", "#ffce56"],
+        hoverBackgroundColor: ["#36a2eb", "#ff6384", "#ffce56"],
+        borderColor: ["transparent", "transparent", "transparent"]
       }
     ]
   };
 
-  const options = {
-    legend: { display: false },
-    title: { display: true, text: "Latest Status" }
-  };
-
   return (
     <>
-      <Bar data={data} options={options} />
+      <Doughnut data={data} />
     </>
   );
 });
